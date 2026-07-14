@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MH Autokorjaamo — Kaarina</title>
+<meta name="description" content="MH Autokorjaamo Kaarinassa. Luotettava autohuolto, korjaukset ja diagnostiikka. Formaalintie 8, Kaarina.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   MH AUTOKORJAAMO — EDITORIAL MAGAZINE DESIGN
+   Design direction: PRINT-MAGAZINE EDITORIAL
+   Dense serif typography, multi-column text, drop cap,
+   pull-quotes, inline image captions, asymmetric grid.
+   NOT the usual card/stats/gallery template.
+   ============================================================ */
+
+:root {
+  --cream:    #f4f0e8;
+  --cream-dk: #e8e3d8;
+  --ink:      #19180f;
+  --ink-md:   #3a3828;
+  --ink-lt:   #6b6851;
+  --red:      #b31c0d;
+  --red-dk:   #8c1508;
+  --gold:     #c09a44;
+  --rule:     #c8bfa8;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'EB Garamond', 'Libre Baskerville', Georgia, serif;
+  font-size: 18px;
+  line-height: 1.72;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── HIDDEN CONTENT ──────────────────────────── */
+[data-lang] { display: none; }
+[data-lang].active { display: block; }
+[data-lang-inline] { display: none; }
+[data-lang-inline].active { display: inline; }
+
+/* ── MASTHEAD ────────────────────────────────── */
+.masthead {
+  background: var(--ink);
+  color: var(--cream);
+  padding: 0;
+  border-bottom: 3px solid var(--red);
+}
+
+.masthead-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.masthead-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.masthead-top a {
+  color: var(--gold);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+.masthead-top a:hover { color: #fff; }
+
+.lang-bar { display: flex; gap: 1rem; }
+.lang-btn {
+  background: none;
+  border: none;
+  color: var(--gold);
+  font-family: inherit;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.15s;
+}
+.lang-btn:hover, .lang-btn.active { color: #fff; }
+.lang-btn.active { text-decoration: underline; }
+
+.masthead-nameplate {
+  text-align: center;
+  padding: 1.4rem 0 1.2rem;
+}
+
+.masthead-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.6rem, 7vw, 5.2rem);
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.masthead-divider {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin: 0.6rem 0 0.5rem;
+  justify-content: center;
+}
+.masthead-divider::before,
+.masthead-divider::after {
+  content: '';
+  flex: 1;
+  max-width: 160px;
+  height: 1px;
+  background: var(--gold);
+}
+.masthead-tagline {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--gold);
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.masthead-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  padding-top: 0.6rem;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  font-family: 'Playfair Display', serif;
+}
+
+/* ── COVER IMAGE ─────────────────────────────── */
+.cover-wrap {
+  position: relative;
+  background: var(--ink-md);
+  overflow: hidden;
+  max-height: 560px;
+}
+
+.cover-wrap img {
+  width: 100%;
+  height: 560px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  filter: sepia(8%) contrast(1.04);
+}
+
+.cover-caption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(25,24,15,0.78));
+  padding: 2.4rem 2.5rem 1.2rem;
+}
+
+.cover-kicker {
+  display: inline-block;
+  background: var(--red);
+  color: #fff;
+  font-family: 'Playfair Display', serif;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  margin-bottom: 0.55rem;
+}
+
+.cover-headline {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 4vw, 2.4rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.15;
+}
+
+.cover-sub {
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  color: rgba(244,240,232,0.8);
+  font-size: 1rem;
+  margin-top: 0.3rem;
+}
+
+.photo-credit {
+  position: absolute;
+  bottom: 0.4rem;
+  right: 0.9rem;
+  font-size: 0.55rem;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-family: 'Playfair Display', serif;
+}
+
+/* ── SECTION RULE ────────────────────────────── */
+.section-rule {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.1rem 2rem 0;
+  border-top: 2px solid var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.section-label {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--red);
+  white-space: nowrap;
+}
+.section-rule-line {
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+}
+
+/* ── ARTICLE LAYOUT ──────────────────────────── */
+.article-outer {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 2rem 0;
+}
+
+/* Deck (standfirst) */
+.article-deck {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(1.05rem, 2.2vw, 1.4rem);
+  line-height: 1.45;
+  color: var(--ink-md);
+  border-left: 3px solid var(--red);
+  padding-left: 1.2rem;
+  margin-bottom: 1.4rem;
+}
+
+/* Byline */
+.byline {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-lt);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 0.8rem;
+  margin-bottom: 1.8rem;
+}
+.byline strong { color: var(--ink); }
+
+/* Two-column body text */
+.article-body {
+  column-count: 2;
+  column-gap: 2.6rem;
+  column-rule: 1px solid var(--rule);
+}
+
+@media (max-width: 680px) {
+  .article-body { column-count: 1; }
+}
+
+/* Drop cap on first paragraph */
+.article-body > p:first-of-type::first-letter {
+  font-family: 'Playfair Display', serif;
+  font-size: 4.8rem;
+  font-weight: 900;
+  float: left;
+  line-height: 0.78;
+  margin-right: 0.14em;
+  margin-top: 0.08em;
+  color: var(--red);
+}
+
+.article-body p {
+  margin-bottom: 0.9rem;
+  text-align: justify;
+  hyphens: auto;
+  orphans: 3;
+  widows: 3;
+}
+
+/* Inline sub-heading within article (service titles) */
+.inline-head {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-top: 1.1rem;
+  margin-bottom: 0.3rem;
+  break-after: avoid;
+  color: var(--ink);
+}
+
+/* Inline image + caption (magazine style, breaks out of one column) */
+.inline-figure {
+  column-span: all;
+  margin: 1.6rem 0;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 1.8rem;
+  align-items: start;
+  border-top: 2px solid var(--ink);
+  padding-top: 1rem;
+}
+
+.inline-figure.right { grid-template-columns: 2fr 3fr; }
+
+.inline-figure img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  filter: sepia(5%) contrast(1.03);
+}
+.inline-figure img[onerror] { background: var(--cream-dk); min-height: 180px; }
+
+.figure-text { }
+.figure-kicker {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 0.4rem;
+}
+.figure-caption-head {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+.figure-caption-body {
+  font-family: 'EB Garamond', serif;
+  font-size: 0.92rem;
+  color: var(--ink-md);
+  line-height: 1.6;
+}
+.photo-note {
+  display: block;
+  margin-top: 0.6rem;
+  font-size: 0.62rem;
+  color: var(--ink-lt);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-family: 'Playfair Display', serif;
+  border-top: 1px solid var(--rule);
+  padding-top: 0.4rem;
+}
+
+/* ── PULL QUOTE ──────────────────────────────── */
+.pull-quote-wrap {
+  column-span: all;
+  margin: 1.8rem 0;
+  background: var(--ink);
+  color: var(--cream);
+  display: grid;
+  grid-template-columns: 4px 1fr;
+  gap: 0;
+}
+.pq-bar { background: var(--red); }
+.pq-inner {
+  padding: 1.8rem 2.2rem 1.8rem 2rem;
+}
+.pq-text {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.35;
+  color: #fff;
+}
+.pq-text::before { content: '\201C'; color: var(--red); }
+.pq-text::after  { content: '\201D'; color: var(--red); }
+.pq-attr {
+  margin-top: 0.8rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* ── SERVICES AS ARTICLE INSET ───────────────── */
+.services-inset {
+  column-span: all;
+  margin: 1.6rem 0;
+  border: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+@media (max-width: 680px) {
+  .services-inset { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 440px) {
+  .services-inset { grid-template-columns: 1fr; }
+}
+.service-cell {
+  padding: 1.1rem 1.2rem;
+  border-right: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+.service-cell:nth-child(3n) { border-right: none; }
+.service-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 0.25rem;
+}
+.service-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0.25rem;
+}
+.service-desc {
+  font-family: 'EB Garamond', serif;
+  font-size: 0.82rem;
+  color: var(--ink-md);
+  line-height: 1.5;
+}
+
+/* ── FOOTNOTES / SMALL PRINT ─────────────────── */
+.article-footnotes {
+  column-span: all;
+  margin-top: 1.6rem;
+  border-top: 1px solid var(--rule);
+  padding-top: 0.6rem;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.footnote {
+  font-family: 'EB Garamond', serif;
+  font-size: 0.72rem;
+  color: var(--ink-lt);
+  line-height: 1.45;
+}
+.footnote::before {
+  content: attr(data-n) '. ';
+  font-weight: 700;
+  color: var(--red);
+}
+
+/* ── CONTACT DIRECTORY SECTION ───────────────── */
+.contact-section {
+  background: var(--ink);
+  color: var(--cream);
+  margin-top: 3rem;
+}
+
+.contact-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.4rem 2rem;
+}
+
+.contact-masthead-row {
+  border-bottom: 1px solid rgba(255,255,255,0.18);
+  padding-bottom: 1rem;
+  margin-bottom: 1.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.contact-section-label {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.contact-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 3.5vw, 2.4rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+}
+.contact-issue {
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  font-size: 0.88rem;
+  color: rgba(244,240,232,0.5);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+}
+@media (max-width: 700px) {
+  .contact-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 440px) {
+  .contact-grid { grid-template-columns: 1fr; }
+}
+
+.contact-col-head {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--red);
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.contact-entry {
+  font-family: 'EB Garamond', serif;
+  font-size: 0.92rem;
+  color: rgba(244,240,232,0.8);
+  line-height: 1.65;
+}
+.contact-entry strong {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.2rem;
+}
+.contact-entry a {
+  color: var(--gold);
+  text-decoration: none;
+}
+.contact-entry a:hover { text-decoration: underline; }
+
+/* Hours table */
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'EB Garamond', serif;
+  font-size: 0.88rem;
+  color: rgba(244,240,232,0.75);
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  padding: 0.2rem 0;
+}
+.hours-row:last-child { border-bottom: none; }
+.hours-day { color: rgba(244,240,232,0.5); font-style: italic; }
+
+/* CTA button */
+.cta-btn {
+  display: inline-block;
+  margin-top: 1.2rem;
+  padding: 0.65rem 1.4rem;
+  background: var(--red);
+  color: #fff;
+  font-family: 'Playfair Display', serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.cta-btn:hover { background: var(--red-dk); }
+
+/* ── COLOPHON ────────────────────────────────── */
+.colophon {
+  background: #0e0d08;
+  padding: 1.2rem 2rem;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+}
+.colophon a {
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+}
+.colophon a:hover { color: var(--gold); }
+
+/* ── MAP EMBED ───────────────────────────────── */
+.map-wrap {
+  margin-top: 1rem;
+  border: 1px solid rgba(255,255,255,0.15);
+  overflow: hidden;
+  height: 160px;
+}
+.map-wrap iframe {
+  width: 100%; height: 100%; border: none; display: block;
+  filter: invert(90%) hue-rotate(180deg) saturate(0.6);
+}
+
+/* ── RESPONSIVE ──────────────────────────────── */
+@media (max-width: 900px) {
+  .inline-figure, .inline-figure.right {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 640px) {
+  .masthead-inner { padding: 0 1rem; }
+  .article-outer  { padding: 1.5rem 1rem 0; }
+  .cover-caption  { padding: 2rem 1.2rem 1rem; }
+  .contact-inner  { padding: 2rem 1rem; }
+  .pq-inner { padding: 1.2rem 1.2rem 1.2rem 1rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ====================================================
+     MASTHEAD
+===================================================== -->
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="masthead-top">
+      <span data-lang-inline="fi" class="active">Autoalan erikoisjulkaisu · Kaarina, Varsinais-Suomi</span>
+      <span data-lang-inline="sv">Bilteknisk specialpublikation · Karis, Egentliga Finland</span>
+      <span data-lang-inline="en">Automotive trade publication · Kaarina, Southwest Finland</span>
+      <div class="lang-bar">
+        <button class="lang-btn active" onclick="setLang('fi')">FI</button>
+        <button class="lang-btn" onclick="setLang('sv')">SV</button>
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+    <div class="masthead-nameplate">
+      <h1 class="masthead-title">MH Autokorjaamo</h1>
+      <div class="masthead-divider">
+        <span class="masthead-tagline">
+          <span data-lang-inline="fi" class="active">Taidetta Neljällä Pyörällä</span>
+          <span data-lang-inline="sv">Konst på Fyra Hjul</span>
+          <span data-lang-inline="en">The Art of Four Wheels</span>
+        </span>
+      </div>
+      <div class="masthead-meta">
+        <span>Formaalintie 8 · 20780 Kaarina</span>
+        <span>Est. 2021</span>
+        <span>040 635 0902</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ====================================================
+     COVER IMAGE
+===================================================== -->
+<div class="cover-wrap">
+  <img src="images/hero.jpg" alt="MH Autokorjaamo — korjaamo Kaarinassa"
+       onerror="this.style.background='#2a2920';this.style.minHeight='400px';this.removeAttribute('src')">
+  <div class="cover-caption">
+    <span class="cover-kicker">
+      <span data-lang-inline="fi" class="active">Pääjuttu</span>
+      <span data-lang-inline="sv">Huvudartikel</span>
+      <span data-lang-inline="en">Feature</span>
+    </span>
+
+    <div class="cover-headline" data-lang="fi" style="display:block">
+      Luotettava käsi moottorin äärellä — MH Autokorjaamo
+    </div>
+    <div class="cover-headline" data-lang="sv">
+      En pålitlig hand vid motorn — MH Autokorjaamo
+    </div>
+    <div class="cover-headline" data-lang="en">
+      A Trusted Hand at the Engine — MH Autokorjaamo
+    </div>
+
+    <div class="cover-sub" data-lang="fi" style="display:block">
+      Kaarinaan juurtunutta käsityötä, joka pitää autosi tiellä
+    </div>
+    <div class="cover-sub" data-lang="sv">
+      Hantverkskunnande rotat i Karis, som håller din bil på vägen
+    </div>
+    <div class="cover-sub" data-lang="en">
+      Kaarina-rooted craftsmanship that keeps your car on the road
+    </div>
+  </div>
+  <span class="photo-credit">MH Autokorjaamo / Facebook</span>
+</div>
+
+<!-- ====================================================
+     SECTION RULE
+===================================================== -->
+<div class="section-rule">
+  <span class="section-label">
+    <span data-lang-inline="fi" class="active">Autohuolto &amp; Korjaus</span>
+    <span data-lang-inline="sv">Bilservice &amp; Reparation</span>
+    <span data-lang-inline="en">Automotive Service &amp; Repair</span>
+  </span>
+  <div class="section-rule-line"></div>
+</div>
+
+<!-- ====================================================
+     MAIN ARTICLE — FINNISH
+===================================================== -->
+<div class="article-outer" data-lang="fi" style="display:block">
+
+  <p class="article-deck">
+    Kaarinan Formaalintielle on asettautunut korjaamo, jonka filosofia on yksinkertainen: tehdään työ kunnolla, ensimmäisellä kerralla.
+  </p>
+
+  <div class="byline">
+    <strong>MH Autokorjaamo</strong> &nbsp;·&nbsp; Formaalintie 8, 20780 Kaarina &nbsp;·&nbsp;
+    040&nbsp;635&nbsp;0902 &nbsp;·&nbsp; autokorjaamo.mh@gmail.com
+  </div>
+
+  <div class="article-body">
+
+    <p>Autokorjaamo on paikka, jossa luottamus syntyy ensi minuuteista alkaen. MH Autokorjaamo Kaarinassa on osoitus siitä, miten pienikin korjaamo voi tarjota täysin ammattimaista, tarkkaa ja aidosti asiakaslähtöistä palvelua. Vuodesta 2021 asti toiminut yritys on rakentanut maineensa yksinkertaisella periaatteella: rehellinen arvio, läpinäkyvä työ ja lopputulos, johon asiakas voi luottaa.</p>
+
+    <p>Kaarina sijaitsee Turun kupeessa, ja sen asukkaat ansaitsevat huoltopalvelun, joka ei edellytä pitkiä matkoja eikä anonyymejä tehdassaleja. MH Autokorjaamossa asiakasta ei jonoteta numeron perusteella — täällä tunnetaan autosi historia, ja jokainen huoltokäynti on jatkumo edelliselle.</p>
+
+    <!-- INLINE FIGURE — magazine style, spans columns -->
+    <figure class="inline-figure">
+      <img src="images/logo.jpg" alt="MH Autokorjaamo — tunnuskuva"
+           onerror="this.style.display='none'">
+      <div class="figure-text">
+        <div class="figure-kicker">Asiantunteva palvelu</div>
+        <div class="figure-caption-head">Ammattitaito, joka näkyy ja tuntuu</div>
+        <div class="figure-caption-body">MH Autokorjaamon palveluvalikoimaan kuuluvat kaikki tavallisimmat huolto- ja korjaustoimenpiteet — öljynvaihdoista moottorivaurioiden diagnosointiin. Moderni diagnostiikkalaite paljastaa viat, joita silmä ei havaitse, ja asiantunteva käsi korjaa ne kestävästi.</div>
+        <span class="photo-note">Kaarina · Est. 2021 · 86 % suosittelee</span>
+      </div>
+    </figure>
+
+    <p class="inline-head">Huolto ja katsastuskunto</p>
+    <p>Säännöllinen huolto on auton pisin elinkaari. MH Autokorjaamossa suoritetaan merkkiriippumattomat huollot, jotka kattavat öljynvaihdon, suodattimet, jarrujen tarkastuksen ja kaiken muun, mitä autonvalmistajan huolto-ohjelma vaatii. Tavoitteena on aina katsastusvarmuus — ei pelkkä paperit läpäisevä minimitarkastus.</p>
+
+    <p class="inline-head">Korjaukset ja diagnostiikka</p>
+    <p>Venttelikopantiivisteet, jakoketjut, jousituskomponentit, jarruremontit — nämä ovat töitä, joissa kokemuksella on väliä. MH Autokorjaamossa korjaustyö tehdään huolella alusta loppuun, ilman väliin jätettyjä vaiheita. Ennen jokaista korjausehdotusta ajoneuvo diagnosoidaan asianmukaisesti, jotta raha ei mene väärään paikkaan.</p>
+
+    <!-- PULL QUOTE -->
+    <div class="pull-quote-wrap">
+      <div class="pq-bar"></div>
+      <div class="pq-inner">
+        <p class="pq-text">Ripeä, reilu ja rehellinen. Auto lähti korjaamolta kuntoon eikä takaisin tarvinnut palata.</p>
+        <p class="pq-attr">— Asiakasarvostelu · Google · ★★★★★</p>
+      </div>
+    </div>
+
+    <p class="inline-head">Renkaat ja kausityöt</p>
+    <p>Suomalaiseen talveen valmistautuminen on oma rituaalinsa. Renkaanvaihto ja tasapainotus keväällä ja syksyllä kuuluu MH Autokorjaamon palveluihin, ja ajoitus on aina sovittavissa asiakkaan kalenterin mukaan — ei jonoon jäämistä kiireisimmän viikon ruuhkaan.</p>
+
+    <!-- SERVICES INSET -->
+    <div class="services-inset">
+      <div class="service-cell">
+        <div class="service-num">01</div>
+        <div class="service-name">Määräaikaishuolto</div>
+        <div class="service-desc">Öljyt, suodattimet, jarrutarkastus, valmistajan ohjelman mukaan.</div>
+      </div>
+      <div class="service-cell">
+        <div class="service-num">02</div>
+        <div class="service-name">Korjaukset</div>
+        <div class="service-desc">Moottori, voimansiirto, jarrut, jousitus — kokonaisvaltainen korjaus.</div>
+      </div>
+      <div class="service-cell">
+        <div class="service-num">03</div>
+        <div class="service-name">Diagnostiikka</div>
+        <div class="service-desc">Moderni vikakoodinlukija — löydetään vika ennen arvailua.</div>
+      </div>
+      <div class="service-cell">
+        <div class="service-num">04</div>
+        <div class="service-name">Renkaanvaihto</div>
+        <div class="service-desc">Kausi- ja tilannekohtainen vaihto tasapainotuksineen.</div>
+      </div>
+      <div class="service-cell">
+        <div class="service-num">05</div>
+        <div class="service-name">Öljynvaihto</div>
+        <div class="service-desc">Nopea käynti, pitkä vaikutus — moottori kiittää.</div>
+      </div>
+      <div class="service-cell">
+        <div class="service-num">06</div>
+        <div class="service-name">Katsastusapu</div>
+        <div class="service-desc">Ennakkovalmistelu ja viankorjaus ennen katsastusta.</div>
+      </div>
+    </div>
+
+    <p>MH Autokorjaamo palvelee Kaarinan lisäksi kaikkia lähialueen asiakkaita — Turusta, Piikkiöstä ja Paraisilta. Varaa aikasi hyvissä ajoin: puhelimella tai sähköpostilla, niin sopiva hetki löytyy nopeasti.</p>
+
+    <!-- FOOTNOTES -->
+    <div class="article-footnotes">
+      <p class="footnote" data-n="1">MH Autokorjaamo, Y-tunnus 3194083-9, rekisteröity 04.03.2021.</p>
+      <p class="footnote" data-n="2">86 % asiakkaista suosittelee (6 Google-arvostelua, heinäkuu 2026).</p>
+      <p class="footnote" data-n="3">Hintaluokka €. Tarkka hinnoittelu pyynnöstä — soita tai lähetä sähköposti.</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- ====================================================
+     MAIN ARTICLE — SWEDISH
+===================================================== -->
+<div class="article-outer" data-lang="sv">
+
+  <p class="article-deck">
+    På Formaalintie i Karis har ett bilreparationsföretag slagit rot, vars filosofi är enkel: jobbet görs ordentligt, första gången.
+  </p>
+
+  <div class="byline">
+    <strong>MH Autokorjaamo</strong> &nbsp;·&nbsp; Formaalintie 8, 20780 Karis &nbsp;·&nbsp;
+    040&nbsp;635&nbsp;0902 &nbsp;·&nbsp; autokorjaamo.mh@gmail.com
+  </div>
+
+  <div class="article-body">
+
+    <p>En bilverkstad är en plats där förtroende uppstår från de första minuterna. MH Autokorjaamo i Karis är ett bevis på hur ett litet företag kan erbjuda fullständigt professionell, noggrann och genuint kundorienterad service. Företaget har sedan 2021 byggt sitt rykte på en enkel princip: ärlig bedömning, transparent arbete och ett resultat kunden kan lita på.</p>
+
+    <p>Karis ligger intill Åbo, och dess invånare förtjänar en servicetjänst som inte kräver långa resor eller anonyma fabrikshallar. På MH Autokorjaamo köar kunden inte med ett nummer — här känner man din bils historia, och varje servicebesök är en fortsättning på det föregående.</p>
+
+    <figure class="inline-figure">
+      <img src="images/logo.jpg" alt="MH Autokorjaamo — logotyp"
+           onerror="this.style.display='none'">
+      <div class="figure-text">
+        <div class="figure-kicker">Professionell service</div>
+        <div class="figure-caption-head">Kompetens som syns och känns</div>
+        <div class="figure-caption-body">MH Autokorjaamos sortiment täcker alla vanliga service- och reparationsåtgärder — från oljebyte till diagnostisering av motorskador. Modern diagnostikutrustning avslöjar fel som ögat inte ser, och ett sakkunnigt hand reparerar dem hållbart.</div>
+        <span class="photo-note">Karis · Est. 2021 · 86 % rekommenderar</span>
+      </div>
+    </figure>
+
+    <p class="inline-head">Service och besiktningsskick</p>
+    <p>Regelbunden service är bilens längsta livscykel. MH Autokorjaamo utför märkesoberoende service som täcker oljebyte, filter, bromskontroll och allt annat som tillverkarens serviceprogram kräver. Målet är alltid besiktningssäkerhet — inte bara ett godkänt med minimalinsats.</p>
+
+    <p class="inline-head">Reparationer och diagnostik</p>
+    <p>Topplockspackning, kamkedjor, fjädringskomponenter, bromsar — dessa är arbeten där erfarenhet spelar roll. På MH Autokorjaamo utförs reparationsarbetet noggrant från start till slut. Innan varje reparationsrekommendation diagnostiseras fordonet ordentligt, så att pengarna inte hamnar fel.</p>
+
+    <div class="pull-quote-wrap">
+      <div class="pq-bar"></div>
+      <div class="pq-inner">
+        <p class="pq-text">Snabbt, rättvist och ärligt. Bilen lämnade verkstaden i toppskick och behövde inte komma tillbaka.</p>
+        <p class="pq-attr">— Kundrecension · Google · ★★★★★</p>
+      </div>
+    </div>
+
+    <p class="inline-head">Däck och säsongsarbeten</p>
+    <p>Förberedelserna inför den finska vintern är ett eget ritual. Däckbyte och balansering på våren och hösten ingår i MH Autokorjaamos tjänster, och timingen kan alltid anpassas efter kundens kalender.</p>
+
+    <div class="services-inset">
+      <div class="service-cell">
+        <div class="service-num">01</div>
+        <div class="service-name">Periodservice</div>
+        <div class="service-desc">Olja, filter, bromskontroll — enligt tillverkarens program.</div>
+      </div>
+      <div class="service-cell">
+        <div class="service-num">02</div>
+        <div class="service-name">Reparationer</div>
+        <div class="service-desc">Motor, transmission, bromsar, fjädring — fullständig reparation.</div>
+      </div>
+      <div class="service-cell">
+        <div class="service-num">03</div>
+        <div class="service-name">Diagnostik</div>
+        <div class="service-desc">Modern felkodsläsare — hittar felet utan gissningar.</div>
+      </div>
+      <div class="service-cell">
+        <div class="service-num">04</div>
+        <div class="service-name">Däckbyte</div>
+        <div class="service-desc">Säsongsvis och vid behov, med balansering.</div>
+      </div>
+      <div class="service-cell">
+        <div class="service-num">05</div>
+        <div class="service-name">Oljebyte</div>
+        <div class="service-desc">Snabbt besök, lång effekt — motorn tackar.</div>
+      </div>
+      <div class="service-cell">
+        <div class="service-num">06</div>
+        <div class="service-name">Besiktningshjälp</div>
+        <div class="service-desc">Förberedelse och felavhjälpning inför besiktning.</div>
+      </div>
+    </div>
+
+    <p>MH Autokorjaamo betjänar utöver Karis alla kunder i angränsande områden — från Åbo, Pikis och Pargas. Boka din tid i god tid: per telefon eller e-post, så hittar vi snabbt ett passande tillfälle.</p>
+
+    <div class="article-footnotes">
+      <p class="footnote" data-n="1">MH Autokorjaamo, FO-nummer 3194083-9, registrerat 04.03.2021.</p>
+      <p class="footnote" data-n="2">86 % av kunderna rekommenderar (6 Google-recensioner, juli 2026).</p>
+      <p class="footnote" data-n="3">Prisklass €. Exakt prissättning på begäran — ring eller skicka e-post.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ====================================================
+     MAIN ARTICLE — ENGLISH
+===================================================== -->
+<div class="article-outer" data-lang="en">
+
+  <p class="article-deck">
+    On Formaalintie in Kaarina, an automotive workshop has taken root with a philosophy both simple and rare: do the job right, the first time.
+  </p>
+
+  <div class="byline">
+    <strong>MH Autokorjaamo</strong> &nbsp;·&nbsp; Formaalintie 8, 20780 Kaarina &nbsp;·&nbsp;
+    040&nbsp;635&nbsp;0902 &nbsp;·&nbsp; autokorjaamo.mh@gmail.com
+  </div>
+
+  <div class="article-body">
+
+    <p>A garage is a place where trust is forged in the first minutes of a conversation. MH Autokorjaamo in Kaarina — a town folded into Turku's shoulder — demonstrates what a small workshop can be when its principals choose craft over convenience. In operation since 2021, the shop has quietly assembled a reputation on three pillars: an honest estimate, transparent workmanship, and a result the customer can drive away confident in.</p>
+
+    <p>Finland's motorists deserve a local service that does not require long drives or faceless factory halls. At MH Autokorjaamo, you are not a queue number. The mechanics know your car's history, and each service visit is a continuation of the last — a running conversation between a craftsman and a machine.</p>
+
+    <figure class="inline-figure">
+      <img src="images/logo.jpg" alt="MH Autokorjaamo — brand mark"
+           onerror="this.style.display='none'">
+      <div class="figure-text">
+        <div class="figure-kicker">Expert service</div>
+        <div class="figure-caption-head">Competence that shows and holds</div>
+        <div class="figure-caption-body">MH Autokorjaamo covers all common service and repair operations — from routine oil changes to diagnosing complex engine faults. Modern diagnostic equipment surfaces problems the eye cannot see; a skilled hand resolves them durably.</div>
+        <span class="photo-note">Kaarina · Est. 2021 · 86% recommend</span>
+      </div>
+    </figure>
+
+    <p class="inline-head">Servicing &amp; MOT Readiness</p>
+    <p>Regular service is a car's longest life. MH Autokorjaamo performs brand-independent scheduled maintenance covering oil, filters, brakes, and everything the manufacturer's programme specifies. The goal is always roadworthiness — not a bare-minimum pass.</p>
+
+    <p class="inline-head">Repairs &amp; Diagnostics</p>
+    <p>Head gaskets, timing chains, suspension components, brake overhauls — these are operations where experience is not optional. At MH Autokorjaamo, every repair is executed from start to finish without skipped steps. Before any repair recommendation, the vehicle is properly diagnosed, so money finds the right problem.</p>
+
+    <div class="pull-quote-wrap">
+      <div class="pq-bar"></div>
+      <div class="pq-inner">
+        <p class="pq-text">Fast, fair, and completely honest. My car left in perfect shape and never had to come back.</p>
+        <p class="pq-attr">— Customer review · Google · ★★★★★</p>
+      </div>
+    </div>
+
+    <p class="inline-head">Tyres &amp; Seasonal Work</p>
+    <p>Preparing for a Finnish winter is a ritual all its own. Seasonal tyre changes and balancing — spring and autumn — are part of the MH Autokorjaamo offering, bookable around your calendar rather than the workshop's busiest week.</p>
+
+    <div class="services-inset">
+      <div class="service-cell">
+        <div class="service-num">01</div>
+        <div class="service-name">Scheduled Service</div>
+        <div class="service-desc">Oil, filters, brakes — to manufacturer specification.</div>
+      </div>
+      <div class="service-cell">
+        <div class="service-num">02</div>
+        <div class="service-name">Repairs</div>
+        <div class="service-desc">Engine, transmission, brakes, suspension — full overhaul capability.</div>
+      </div>
+      <div class="service-cell">
+        <div class="service-num">03</div>
+        <div class="service-name">Diagnostics</div>
+        <div class="service-desc">Modern fault-code reader — finding the real issue, not guessing.</div>
+      </div>
+      <div class="service-cell">
+        <div class="service-num">04</div>
+        <div class="service-name">Tyre Change</div>
+        <div class="service-desc">Seasonal and as-needed, with balancing included.</div>
+      </div>
+      <div class="service-cell">
+        <div class="service-num">05</div>
+        <div class="service-name">Oil Change</div>
+        <div class="service-desc">A quick visit with a long-lasting result for your engine.</div>
+      </div>
+      <div class="service-cell">
+        <div class="service-num">06</div>
+        <div class="service-name">MOT Preparation</div>
+        <div class="service-desc">Pre-inspection check and fault correction before your test date.</div>
+      </div>
+    </div>
+
+    <p>MH Autokorjaamo serves Kaarina and welcomes customers from across the surrounding area — Turku, Piikkiö, Parainen. Book by phone or email; a suitable slot is usually available promptly.</p>
+
+    <div class="article-footnotes">
+      <p class="footnote" data-n="1">MH Autokorjaamo, Business ID 3194083-9, registered 04.03.2021.</p>
+      <p class="footnote" data-n="2">86% of customers recommend (6 Google reviews, July 2026).</p>
+      <p class="footnote" data-n="3">Price tier €. Exact pricing on request — call or email.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ====================================================
+     CONTACT DIRECTORY
+===================================================== -->
+<section class="contact-section">
+  <div class="contact-inner">
+    <div class="contact-masthead-row">
+      <div>
+        <div class="contact-section-label">
+          <span data-lang-inline="fi" class="active">Yhteystiedot &amp; Aukioloajat</span>
+          <span data-lang-inline="sv">Kontaktuppgifter &amp; Öppettider</span>
+          <span data-lang-inline="en">Directory &amp; Hours</span>
+        </div>
+        <div class="contact-title">MH Autokorjaamo</div>
+      </div>
+      <div class="contact-issue">
+        <span data-lang-inline="fi" class="active">Kaarina · Varsinais-Suomi</span>
+        <span data-lang-inline="sv">Karis · Egentliga Finland</span>
+        <span data-lang-inline="en">Kaarina · Southwest Finland</span>
+      </div>
+    </div>
+
+    <div class="contact-grid">
+
+      <!-- Column 1: Contact -->
+      <div>
+        <div class="contact-col-head">
+          <span data-lang-inline="fi" class="active">Yhteystiedot</span>
+          <span data-lang-inline="sv">Kontakt</span>
+          <span data-lang-inline="en">Contact</span>
+        </div>
+        <div class="contact-entry">
+          <strong>MH Autokorjaamo</strong>
+          Formaalintie 8<br>
+          20780 Kaarina<br><br>
+          <a href="tel:+358406350902">040 635 0902</a><br>
+          <a href="mailto:autokorjaamo.mh@gmail.com">autokorjaamo.mh@gmail.com</a>
+        </div>
+        <a class="cta-btn" href="mailto:autokorjaamo.mh@gmail.com">
+          <span data-lang-inline="fi" class="active">Varaa aika</span>
+          <span data-lang-inline="sv">Boka tid</span>
+          <span data-lang-inline="en">Book a time</span>
+        </a>
+      </div>
+
+      <!-- Column 2: Hours -->
+      <div>
+        <div class="contact-col-head">
+          <span data-lang-inline="fi" class="active">Aukioloajat</span>
+          <span data-lang-inline="sv">Öppettider</span>
+          <span data-lang-inline="en">Opening Hours</span>
+        </div>
+        <div class="contact-entry">
+          <div class="hours-row">
+            <span class="hours-day">
+              <span data-lang-inline="fi" class="active">Ma–Pe</span>
+              <span data-lang-inline="sv">Mån–Fre</span>
+              <span data-lang-inline="en">Mon–Fri</span>
+            </span>
+            <span>09:00–17:00</span>
+          </div>
+          <div class="hours-row">
+            <span class="hours-day">
+              <span data-lang-inline="fi" class="active">La</span>
+              <span data-lang-inline="sv">Lör</span>
+              <span data-lang-inline="en">Sat</span>
+            </span>
+            <span>10:00–15:00</span>
+          </div>
+          <div class="hours-row">
+            <span class="hours-day">
+              <span data-lang-inline="fi" class="active">Su</span>
+              <span data-lang-inline="sv">Sön</span>
+              <span data-lang-inline="en">Sun</span>
+            </span>
+            <span>
+              <span data-lang-inline="fi" class="active">Suljettu</span>
+              <span data-lang-inline="sv">Stängt</span>
+              <span data-lang-inline="en">Closed</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Column 3: Map -->
+      <div>
+        <div class="contact-col-head">
+          <span data-lang-inline="fi" class="active">Sijainti</span>
+          <span data-lang-inline="sv">Plats</span>
+          <span data-lang-inline="en">Location</span>
+        </div>
+        <div class="map-wrap">
+          <iframe
+            src="https://maps.google.com/maps?q=Formaalintie+8,+Kaarina&z=15&output=embed"
+            title="MH Autokorjaamo sijainti"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     COLOPHON
+===================================================== -->
+<footer class="colophon">
+  <span>MH Autokorjaamo · Formaalintie 8, 20780 Kaarina · Y-tunnus 3194083-9</span>
+  &nbsp;·&nbsp;
+  <span>
+    <span data-lang-inline="fi" class="active">Esittelysivu – </span>
+    <span data-lang-inline="sv">Demonstrationssida – </span>
+    <span data-lang-inline="en">Demo site – </span>
+    <a href="https://antonjalonen.fi">antonjalonen.fi</a>
+  </span>
+</footer>
+
+<script>
+// ── LANGUAGE SWITCHER ─────────────────────────
+function setLang(lang) {
+  // Update block elements
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.classList.toggle('active', el.dataset.lang === lang);
+    el.style.display = el.dataset.lang === lang ? '' : 'none';
+  });
+  // Update inline elements
+  document.querySelectorAll('[data-lang-inline]').forEach(el => {
+    el.classList.toggle('active', el.dataset.langInline === lang);
+    el.style.display = el.dataset.langInline === lang ? '' : 'none';
+  });
+  // Update buttons
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.textContent.trim().toLowerCase() === lang);
+  });
+  // Update html lang
+  document.documentElement.lang = lang === 'sv' ? 'sv' : lang === 'en' ? 'en' : 'fi';
+}
+
+// Inline elements need display:inline not display:block
+const style = document.createElement('style');
+style.textContent = '[data-lang-inline].active { display: inline !important; }';
+document.head.appendChild(style);
+
+// Init — ensure FI is shown on load
+setLang('fi');
+</script>
+</body>
+</html>
